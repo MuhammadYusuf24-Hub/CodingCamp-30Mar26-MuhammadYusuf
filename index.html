@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Pengeluaran</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+
+        <!-- Tombol Dark/Light Mode -->
+        <div class="baris-atas">
+            <button id="tombolMode">🌙 Mode Gelap</button>
+        </div>
+
+        <h1 class="judul">Visualisasi Pengeluaran & Anggaran</h1>
+
+        <!-- Kartu Total Saldo -->
+        <section class="kartu-saldo">
+            <p class="label-saldo">TOTAL SALDO</p>
+            <h2 class="jumlah-saldo" id="totalSaldo">Rp 0</h2>
+        </section>
+
+        <!-- Form Tambah Transaksi -->
+        <section class="kartu-form">
+            <h3>Tambah Transaksi</h3>
+
+            <div class="grup-form">
+                <label for="namaItem">Nama Item</label>
+                <input type="text" id="namaItem" placeholder="cth. Makan siang">
+            </div>
+
+            <div class="grup-form">
+                <label for="jumlah">Jumlah (Rp)</label>
+                <input type="number" id="jumlah" placeholder="cth. 15000">
+            </div>
+
+            <div class="grup-form">
+                <label for="kategori">Kategori</label>
+                <select id="kategori">
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Hiburan">Hiburan</option>
+                </select>
+            </div>
+
+            <button id="tombolTambah">Tambah Transaksi</button>
+
+            <!-- Batas Pengeluaran -->
+            <div class="grup-form">
+                <label for="batasPengeluaran">⚠️ Batas Pengeluaran (Rp)</label>
+                <input type="number" id="batasPengeluaran" placeholder="cth. 100000">
+                <button id="tombolAturBatas">Atur Batas</button>
+            </div>
+
+        </section>
+
+        <!-- Daftar Transaksi & Grafik -->
+        <section class="bagian-bawah">
+
+            <!-- Daftar Transaksi -->
+            <div class="kartu-transaksi">
+                <h3>Daftar Transaksi</h3>
+                <!-- Sorting -->
+                <div class="grup-sortir">
+                    <label for="pilihanSortir">Urutkan:</label>
+                    <select id="pilihanSortir">
+                        <option value="default">-- Pilih --</option>
+                        <option value="jumlahNaik">Jumlah ↑ Terkecil</option>
+                        <option value="jumlahTurun">Jumlah ↓ Terbesar</option>
+                        <option value="kategori">Kategori A-Z</option>
+                    </select>
+                </div>
+                <div class="daftar-transaksi" id="daftarTransaksi">
+                    <p class="pesan-kosong">Belum ada transaksi.</p>
+                </div>
+            </div>
+
+            <!-- Grafik Pie -->
+            <div class="kartu-grafik">
+                <h3>Grafik Pengeluaran</h3>
+                <canvas id="grafikPengeluaran"></canvas>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+</body>
+
+</html>
